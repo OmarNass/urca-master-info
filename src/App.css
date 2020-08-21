@@ -1,38 +1,269 @@
-.App {
-  text-align: center;
+body {
+  font-family: aller, sans-serif;
+  font-weight: 400;
+  background-color: #e5e5e5;
+}
+a {
+  color: #37828e;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  padding-top: 140px;
+}
+main.page {
+  padding-top: 370px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  background-color: #fff;
+  z-index: 9999;
+}
+/* H E A D E R*/
+
+.lang {
+  padding: 10px 0;
+}
+.lang .dropdown {
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.menu li {
+  flex: auto;
+}
+.menu li a {
+  display: block;
+  padding: 15px;
+  text-transform: uppercase;
+  font-family: museo, sans-serif;
+  font-weight: bold;
+}
+.menu .current, .menu a:hover {
+  background-color: #37828e;
+  color: #fff;
+}
+.menu li a:hover {
+  text-decoration: none;
+}
+.master-info{
+  height: 100%;
+  /* border-left: 1px solid #e5e5e5; */
+display: flex;
+align-items: center; 
+}
+.master-info span{
+  border-left: 1px solid #e5e5e5;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-family: museo, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* M A I N   C O N T E N T */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: museo, sans-serif;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-content {
+  background-color: #fff;
+  min-height: 300px;
+  padding: 15px 30px;
+}
+.page-content p {
+  text-align: justify;
+}
+.page-content h1 {
+  text-align: right;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.page-content h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #37828e;
+  margin: 35px 0 15px 0;
+}
+.page-content h2::after {
+  content: '';
+  display: block;
+  height: 18px;
+  margin-top: 8px;
+  background: #37828e url('img/trame.gif') repeat-x;
+}
+
+.sidebar .side-nav {
+  background-color: #37828e;
+  margin-top: 150px;
+  padding: 15px;
+}
+.sidebar .side-nav li {
+  border-bottom: 1px solid #4d909a;
+  padding: 10px 0;
+}
+.sidebar .side-nav li a{
+  font-family: museo, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sidebar .espace {
+  padding: 15px;
+}
+.sidebar .espace li {
+  margin: 0 0 5px;
+}
+.sidebar .espace a {
+  color: #000;
+  font-size: 20px;
+}
+
+.box {
+  background-color: #f0f0f0;
+  position: relative;
+  height: 140px;
+  padding: 10px;
+}
+.box:hover{
+  background-color: #e3e3e3;
+  cursor: pointer;
+}
+.box-icon{
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  bottom: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 99px;
+}
+.box-icon .feather {
+  color: #37828e;
+}
+.box p{
+  font-family: museo, sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.partenaires{
+  display: flex;
+
+}
+.partenaires li{
+  flex: auto;
+}
+
+.partenaires img {
+  max-width: 150px;
+}
+
+.testimonial { 
+  background-color: #fff;
+  padding: 15px;
+  margin: 0 15px;
+  border-radius: 5px;
+  position: relative;
+  width: 300px !important;
+}
+.testimonials button {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #4d909a;
+  border-radius: 99px;
+  border: none;
+  height: 36px;
+  width: 36px;
+}
+.slick-prev::before, .slick-next::before {
+  content: ' ' !important;
+}
+.slick-prev:hover, .slick-next:hover {
+  background-color: #37828e !important;
+}
+.testimonials .feather {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.testimonials .slick-prev {
+  left: -20px;
+}
+.testimonials .slick-next {
+  right: -20px;
+}
+.testimonial img {
+  background-color: #f0f0f0;
+  width: 120px;
+  height: auto;
+  border-radius: 99px;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+.testimonial span { 
+  color: #666;
+  font-style: italic;
+}
+
+
+/* F O O T E R */
+footer { 
+  margin-top: 50px;
+  background-color: #f0f0f0;
+  padding: 25px 15px 10px 15px;
+}
+footer .social {
+  display: flex;
+}
+footer .social li {
+  margin-right: 20px;
+}
+footer .navigation {
+}
+footer .navigation li {
+  display: inline;
+  margin: 0 0 0 17px;
+}
+footer .navigation a {
+  color: #000;
+}
+
+
+
+/* BOOTSTRAP RESKIN */
+.breadcrumb {
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 13px;
+  padding: 15px 15px 7px 15px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  padding-right: .35rem;
+  color: #37828e;
+  content: ">";
+}
+.btn-primary{
+  background-color: #37828e;
+  border: none;
+}
+.btn-primary:hover{
+  background-color: #37828e;
 }

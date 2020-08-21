@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
+import feather from 'feather-icons/dist/feather'
+
+import Navbar from './components/layout/Navbar'
+import Landing from './components/layout/Landing'
+import Page from './components/page/Page'
+import Footer from './components/layout/Footer'
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/page1" component={Page} />
+          <Route exact path="/page2" component={Page} />
+          <Route exact path="/page3" component={Page} />
+          <Route exact path="/page4" component={Page} />
+          <Route exact path="/page5" component={Page} />
+        </Switch>
+        <Footer />
+      </Fragment>
+    </Router>
+  )
+
 }
 
-export default App;
+
+export default App
