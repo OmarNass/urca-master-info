@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 
 import Project from '../Project'
+import Testimonial from '../Testimonial'
 
 import feather from 'feather-icons/dist/feather'
 import 'slick-carousel/slick/slick.css'
@@ -12,18 +13,28 @@ import axios from 'axios'
 
 const Landing = () => {
     const [projects, setProjects] = useState([])
+    const [testimonials, setTestimonials] = useState([])
+    const [partners, setPartners] = useState([])
 
     useEffect(() => {
         feather.replace()
-        getProjects()
+        getPosts('project') 
+        getPosts('testimonial') 
+        getPosts('partner') 
     }, [])
 
-    async function getProjects() {
+    async function getPosts(type) {
         try {
-            const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6&filter=tag:project')
-            setProjects(res.data.posts)
+            const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6&filter=tag:' + type)
+            if (type == 'project')
+                setProjects(res.data.posts)
+            else if (type == 'testimonial')
+                setTestimonials(res.data.posts)
+            else
+                setPartners(res.data.posts)
+
         } catch (err) {
-            console.log(err.msg)
+            console.log(err.message)
         }
     }
 
@@ -91,26 +102,16 @@ const Landing = () => {
                     </div>
                     <div className="col-12">
                         <Slider className="testimonials" {...settings}>
-                            <div className="testimonial text-center">
-                                <img src={require("../../img/testimonial-guy-1.jpg")} alt="personA" />
-                                <p>I really loved  the student life in URCA, and would definitely recommand it to friends and family!</p>
-                                <span>&mdash; John Doe, Software Engineer</span>
-                            </div>
-                            <div className="testimonial text-center">
-                                <img src={require("../../img/testimonial-guy-2.jpg")} alt="personA" />
-                                <p>I really loved  the student life in URCA, and would definitely recommand it to friends and family!</p>
-                                <span>&mdash; John Doe, Software Engineer</span>
-                            </div>
-                            <div className="testimonial text-center">
-                                <img src={require("../../img/testimonial-guy-3.jpg")} alt="personA" />
-                                <p>I really loved  the student life in URCA, and would definitely recommand it to friends and family!</p>
-                                <span>&mdash; John Doe, Software Engineer</span>
-                            </div>
-                            <div className="testimonial text-center">
-                                <img src={require("../../img/testimonial-guy-4.jpg")} alt="personA" />
-                                <p>I really loved  the student life in URCA, and would definitely recommand it to friends and family!</p>
-                                <span>&mdash; John Doe, Software Engineer</span>
-                            </div>
+                            {
+                                testimonials.map(testimonial => (
+                                    <div key={testimonial.id} className="col">
+                                        <Testimonial 
+                                            picture={testimonial.feature_image}
+                                            testimonialData={testimonial}
+                                        />
+                                    </div>
+                                ))
+                            }
                         </Slider>
                     </div>
                 </div>
@@ -120,11 +121,13 @@ const Landing = () => {
                     </div>
                     <div className="col-12">
                         <ul className="partenaires">
-                            <li><img src={require("../../img/part1.png")} alt="partenaire1" /></li>
-                            <li><img src={require("../../img/part2.png")} alt="partenaire2" /></li>
-                            <li><img src={require("../../img/part3.png")} alt="partenaire3" /></li>
-                            <li><img src={require("../../img/part4.png")} alt="partenaire4" /></li>
-                            <li><img src={require("../../img/part5.png")} alt="partenaire5" /></li>
+                            {
+                                partners.map(partner => (
+                                    <li key={partner.id}>
+                                        <img src={partner.feature_image} alt={partner.slug} />
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>
