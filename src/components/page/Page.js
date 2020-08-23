@@ -1,10 +1,24 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const Page = () => {
+const Page = ({match}) => {
+    const [page, setPage] = useState({})
 
-    let location = useLocation();
+    useEffect(() => {
+        getPage(match.path)
+    }, [])
     
+    async function getPage(path) {
+        const slug = path.substring(1)
+        try {
+            const res = await axios.get('/api/v3/content/pages/slug/' + slug + '/?key=cac15f28976f6e0ff9542ef6a6')
+            setPage(res.data.pages[0])
+        } catch (err) {
+            console.log(err.msg)
+        }
+    };
+    
+
     return ( 
         <main>
             <div className="container">
@@ -35,15 +49,8 @@ const Page = () => {
                             </ol>
                         </nav>
                         <div className="page-content">
-                            <h1>{location.pathname}</h1>
-                            <p>
-                                Après une demande d'admission, une demande de transfert de dossier, une demande de réorientation ou tout simplement pour poursuivre votre cursus, il est nécessaire de procéder à votre inscription administrative à l’Université de Reims Champagne-Ardenne.
-                            </p>
-                            <p>
-                                L'inscription à l'université est obligatoire pour y étudier. Elle permet de délivrer la carte d'étudiant, d'assister aux enseignements, de participer aux examens, de s'affilier à la sécurité sociale étudiante et de bénéficier de tous les services que l'université met à disposition de ses étudiants.
-                            </p>
-                            <h2>Comment ?</h2>
-                            <p>En fonction de votre profil, les modalités d'inscription diffèrent :</p>
+                            <h1>{page.title}</h1>
+                            <div dangerouslySetInnerHTML={{ __html: page.html }} />
                         </div>
                     </div>
 

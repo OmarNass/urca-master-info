@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 
 const Navbar = () => {
+    const [navigation, setNavigation] = useState([])
+
+    useEffect(() => {
+        getNavigation()
+    }, [])
+
+    async function getNavigation() {
+        try {
+            const res = await axios.get('/api/v3/content/settings/?key=cac15f28976f6e0ff9542ef6a6')
+            setNavigation(...navigation, res.data.settings.navigation)
+        } catch (err) {
+            console.log(err.msg)
+        }
+    }
+
     return ( 
         // H E A D E R 
         <header className="fixed-top">
@@ -35,24 +51,11 @@ const Navbar = () => {
                 <div className="row">
                     <div className="col px-0" style={{borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5"}}>
                         <ul className="menu">
-                            <li>
-                                <NavLink exact activeClassName="current" to="/">Home</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact activeClassName="current" to="/page1">Page 1</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact activeClassName="current" to="/page2">Page 2</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact activeClassName="current" to="/page3">Page 3</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact activeClassName="current" to="/page4">Page 4</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact activeClassName="current" to="/page5">Page 5</NavLink>
-                            </li>
+                            {navigation.map(link => (
+                                <li key={link.label}>
+                                    <NavLink exact activeClassName="current" to={link.url}>{link.label}</NavLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

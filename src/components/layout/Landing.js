@@ -5,10 +5,27 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
+import axios from 'axios'
+
 const Landing = () => {
 
     useEffect(() => {
         feather.replace()
+        // const config = {
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // }   
+        async function getPost(){
+            try {
+                const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6')  
+                console.log(res.data)        
+            } catch (error) {  
+                console.log(error.msg)   
+            }
+        }
+        // getPost()
+       
     })
 
     const settings = {
