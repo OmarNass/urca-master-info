@@ -130,14 +130,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .box {
+  display: block;
   background-color: #f0f0f0;
   position: relative;
   height: 140px;
   padding: 10px;
 }
 .box:hover{
+  color: #37828e; 
   background-color: #e3e3e3;
   cursor: pointer;
+  text-decoration: none;
 }
 .box-icon{
   position: absolute;

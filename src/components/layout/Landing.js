@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
+
+import Project from '../Project'
 
 import feather from 'feather-icons/dist/feather'
 import 'slick-carousel/slick/slick.css'
@@ -8,25 +11,21 @@ import Slider from 'react-slick'
 import axios from 'axios'
 
 const Landing = () => {
+    const [projects, setProjects] = useState([])
 
     useEffect(() => {
         feather.replace()
-        // const config = {
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // }   
-        async function getPost(){
-            try {
-                const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6')  
-                console.log(res.data)        
-            } catch (error) {  
-                console.log(error.msg)   
-            }
+        getProjects()
+    }, [])
+
+    async function getProjects() {
+        try {
+            const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6&filter=tag:project')
+            setProjects(res.data.posts)
+        } catch (err) {
+            console.log(err.msg)
         }
-        // getPost()
-       
-    })
+    }
 
     const settings = {
         infinite: true,
@@ -43,28 +42,28 @@ const Landing = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <div className="box" href="#">
+                        <Link className="box" to="/contenu-de-la-formation">
                             <p>Contenu de la formation</p>
                             <span className="box-icon"><i data-feather="file-text"></i></span>
-                        </div>
+                        </Link>
                     </div>
                     <div className="col">
-                        <div className="box" href="#">
+                        <Link className="box" to="/emploi-du-temps">
                             <p>Emploi du temps</p>
                             <span className="box-icon"><i data-feather="calendar"></i></span>
-                        </div>
+                        </Link>
                     </div>
                     <div className="col">
-                        <div className="box" href="#">
+                        <Link className="box" to="/international">
                             <p>International</p>
                             <span className="box-icon"><i data-feather="globe"></i></span>
-                        </div>
+                        </Link>
                     </div>
                     <div className="col">
-                        <div className="box" href="#">
+                        <Link className="box" to="/debouches">
                             <p>Débouchés</p>
                             <span className="box-icon"><i data-feather="briefcase"></i></span>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 {/* row end */}
@@ -72,36 +71,18 @@ const Landing = () => {
                     <div className="col-12 mb-3">
                         <h1>Projets réalisés</h1>
                     </div>
-                    <div className="col">
-                        <div className="card" >
-                            <img src={require("../../img/project1.jpg")} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                            <h5 className="card-title">Project 1</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                    {/* 3 Latest projects (ie. Posts tagged Project) */}
+                    {
+                        projects.slice(0, 3).map(project => (
+                            <div key={project.id} className="col">
+                                <Project 
+                                    thumbnail={project.feature_image}
+                                    projectData={project}
+                                />
                             </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card" >
-                            <img src={require("../../img/project2.jpg")} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                            <h5 className="card-title">Project 2</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card" >
-                            <img src={require("../../img/project3.jpg")} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                            <h5 className="card-title">Project 3</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
+                   
                 </div>
                 {/* <!-- row end--> */}
                 <div className="row mt-5">

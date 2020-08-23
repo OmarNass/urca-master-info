@@ -20,12 +20,7 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route key="key1" exact path="/contenu-de-la-formation" component={Page} />
-            <Route key="key2" exact path="/tag/getting-started/" component={Page} />
-            <Route key="key3" exact path="/international" component={Page} />
-          </Switch>
+          <Routes />
           <Footer />
         </Fragment>
       </Router>

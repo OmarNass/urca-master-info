@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Page = ({match}) => {
+const Page = ({match, type}) => {
     const [page, setPage] = useState({})
 
     useEffect(() => {
@@ -11,14 +11,16 @@ const Page = ({match}) => {
     async function getPage(path) {
         const slug = path.substring(1)
         try {
-            const res = await axios.get('/api/v3/content/pages/slug/' + slug + '/?key=cac15f28976f6e0ff9542ef6a6')
-            setPage(res.data.pages[0])
+            const res = await axios.get('/api/v3/content/' + type +'/slug/' + slug + '/?key=cac15f28976f6e0ff9542ef6a6')
+            if (type === 'pages')
+                setPage(res.data.pages[0])
+            else 
+                setPage(res.data.posts[0])
         } catch (err) {
-            console.log(err.msg)
+            console.log(err.message)
         }
     };
     
-
     return ( 
         <main>
             <div className="container">

@@ -12,9 +12,9 @@ const Navbar = () => {
     async function getNavigation() {
         try {
             const res = await axios.get('/api/v3/content/settings/?key=cac15f28976f6e0ff9542ef6a6')
-            setNavigation(...navigation, res.data.settings.navigation)
+            setNavigation(res.data.settings.navigation)
         } catch (err) {
-            console.log(err.msg)
+            console.log(err.message)
         }
     }
 
