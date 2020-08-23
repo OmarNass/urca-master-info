@@ -22,8 +22,9 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/contenu-de-la-formation" component={Page} />
-            <Route exact path="/tag/getting-started/" component={Page} />
+            <Route key="key1" exact path="/contenu-de-la-formation" component={Page} />
+            <Route key="key2" exact path="/tag/getting-started/" component={Page} />
+            <Route key="key3" exact path="/international" component={Page} />
           </Switch>
           <Footer />
         </Fragment>
