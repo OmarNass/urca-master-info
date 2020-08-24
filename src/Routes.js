@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import Landing from './components/layout/Landing'
 import Page from './components/page/Page'
+import Projects from './components/Projects'
 
 const Routes = () => {
     const [pageSlugs, setPageSlugs] = useState([])
@@ -29,6 +30,7 @@ const Routes = () => {
     return ( 
         <Switch>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/projets" component={Projects}  />
             {
                 pageSlugs.map(slug => (
                     <Route key={slug.slug} exact path={'/' + slug.slug}

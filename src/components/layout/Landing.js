@@ -17,18 +17,18 @@ const Landing = () => {
     const [partners, setPartners] = useState([])
 
     useEffect(() => {
-        feather.replace()
         getPosts('project') 
         getPosts('testimonial') 
         getPosts('partner') 
+        feather.replace()
     }, [])
 
     async function getPosts(type) {
         try {
             const res = await axios.get('/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6&filter=tag:' + type)
-            if (type == 'project')
+            if (type === 'project')
                 setProjects(res.data.posts)
-            else if (type == 'testimonial')
+            else if (type === 'testimonial')
                 setTestimonials(res.data.posts)
             else
                 setPartners(res.data.posts)
@@ -37,7 +37,7 @@ const Landing = () => {
             console.log(err.message)
         }
     }
-
+    
     const settings = {
         infinite: true,
         slidesToShow: 3,
@@ -46,6 +46,7 @@ const Landing = () => {
         centerPadding: '60px',
         nextArrow: <button><i data-feather="arrow-right"></i></button>,
         prevArrow: <button><i data-feather="arrow-left"></i></button>,
+        onReInit: () => feather.replace()
     }
     return (  
         // M A I N
@@ -93,6 +94,10 @@ const Landing = () => {
                             </div>
                         ))
                     }
+                    <div className="col-12 text-right mt-3">
+                        <Link to="/projets" className="btn btn-primary">Tous les Projets</Link>
+                    </div>
+                    
                    
                 </div>
                 {/* <!-- row end--> */}
@@ -101,14 +106,16 @@ const Landing = () => {
                         <h1>Paroles d'Anciens</h1>
                     </div>
                     <div className="col-12">
+                        
                         <Slider className="testimonials" {...settings}>
                             {
                                 testimonials.map(testimonial => (
+                                    
                                     <div key={testimonial.id} className="col">
                                         <Testimonial 
                                             picture={testimonial.feature_image}
                                             testimonialData={testimonial}
-                                        />
+                                        />                                        
                                     </div>
                                 ))
                             }

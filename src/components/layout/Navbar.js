@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Navbar = () => {
@@ -24,9 +24,9 @@ const Navbar = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col pl-0">
-                        <div className="logo">
+                        <Link className="logo" to="/">
                             <img src={require("../../img/logo.png")} alt="logo URCA" />
-                        </div>
+                        </Link>
                     </div>
                     <div className="col">
                         <div className="master-info" >
@@ -51,11 +51,20 @@ const Navbar = () => {
                 <div className="row">
                     <div className="col px-0" style={{borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5"}}>
                         <ul className="menu">
-                            {navigation.map(link => (
-                                <li key={link.label}>
-                                    <NavLink exact activeClassName="current" to={link.url}>{link.label}</NavLink>
-                                </li>
-                            ))}
+                            {navigation.map(link => {
+                                if (link.url.includes('http')) {
+                                    return (
+                                        <li key={link.label}>
+                                            <a href={link.url} target="_blank">{link.label}</a>
+                                        </li>
+                                    )
+                                }
+                                return (
+                                    <li key={link.label}>
+                                        <NavLink exact activeClassName="current" to={link.url}>{link.label}</NavLink>
+                                    </li>
+                                )}
+                            )}
                         </ul>
                     </div>
                 </div>

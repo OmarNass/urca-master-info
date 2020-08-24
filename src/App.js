@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+import $ from 'jquery';
+import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
 import './App.css'
 
 import Navbar from './components/layout/Navbar'
@@ -11,20 +14,17 @@ import Page from './components/page/Page'
 import Routes from './Routes'
 //redux
 import { Provider } from 'react-redux'
-import store from './store'
 
 const App = () => {
 
   return (
-    <Provider store={store}>
-      <Router>
-        <Fragment>
-          <Navbar />
-          <Routes />
-          <Footer />
-        </Fragment>
-      </Router>
-    </Provider>
+    <Router>
+      <Fragment>
+        <Navbar />
+        <Routes />
+        <Footer />
+      </Fragment>
+    </Router>
   )
 
 }
