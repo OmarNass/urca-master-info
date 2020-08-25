@@ -73,6 +73,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+h1 {
+  text-shadow: 2px 2px 30px #fff;
+}
+
+main {
+  background: url('img/bg.jpg');
+  background-size: cover;
+  padding-bottom: 50px;
+}
+
 .page-content {
   background-color: #fff;
   min-height: 300px;
@@ -111,6 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #37828e;
   margin-top: 150px;
   padding: 15px;
+  color: #fff;
 }
 .sidebar .side-nav li {
   border-bottom: 1px solid #4d909a;
@@ -234,7 +245,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* F O O T E R */
 footer { 
-  margin-top: 50px;
   background-color: #f0f0f0;
   padding: 25px 15px 10px 15px;
 }
@@ -276,4 +286,7 @@ footer .navigation a {
 }
 .btn-primary:hover{
   background-color: #37828e;
+}
+.card {
+  border: none;
 }
