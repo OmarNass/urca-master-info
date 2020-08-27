@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f0fc590d258dbba19531f7be181a7162",
+    "revision": "2354977631cf7bd17bdde9fd6aa35cb2",
     "url": "/urca-master-info/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/urca-master-info/static/css/2.fa008d51.chunk.css"
   },
   {
-    "revision": "7e1b0b91a5275e170773",
+    "revision": "13f6964c123bd21566de",
     "url": "/urca-master-info/static/css/main.b1f1e749.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/urca-master-info/static/js/2.39c97a8a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e1b0b91a5275e170773",
-    "url": "/urca-master-info/static/js/main.991165ab.chunk.js"
+    "revision": "13f6964c123bd21566de",
+    "url": "/urca-master-info/static/js/main.f8666a2b.chunk.js"
   },
   {
     "revision": "b6cdb179fa49bedff00e",
