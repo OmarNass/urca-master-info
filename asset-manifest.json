@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/urca-master-info/static/css/main.b1f1e749.chunk.css",
+    "main.js": "/urca-master-info/static/js/main.1188348c.chunk.js",
+    "main.js.map": "/urca-master-info/static/js/main.1188348c.chunk.js.map",
+    "runtime-main.js": "/urca-master-info/static/js/runtime-main.7fd33aff.js",
+    "runtime-main.js.map": "/urca-master-info/static/js/runtime-main.7fd33aff.js.map",
+    "static/css/2.fa008d51.chunk.css": "/urca-master-info/static/css/2.fa008d51.chunk.css",
+    "static/js/2.39c97a8a.chunk.js": "/urca-master-info/static/js/2.39c97a8a.chunk.js",
+    "static/js/2.39c97a8a.chunk.js.map": "/urca-master-info/static/js/2.39c97a8a.chunk.js.map",
+    "index.html": "/urca-master-info/index.html",
+    "precache-manifest.40e8adf04f0cf4e681d6bfa02fed03b5.js": "/urca-master-info/precache-manifest.40e8adf04f0cf4e681d6bfa02fed03b5.js",
+    "service-worker.js": "/urca-master-info/service-worker.js",
+    "static/css/2.fa008d51.chunk.css.map": "/urca-master-info/static/css/2.fa008d51.chunk.css.map",
+    "static/css/main.b1f1e749.chunk.css.map": "/urca-master-info/static/css/main.b1f1e749.chunk.css.map",
+    "static/js/2.39c97a8a.chunk.js.LICENSE.txt": "/urca-master-info/static/js/2.39c97a8a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/urca-master-info/static/media/bg.45943c86.jpg",
+    "static/media/logo.png": "/urca-master-info/static/media/logo.357938b4.png",
+    "static/media/slick-theme.css": "/urca-master-info/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7fd33aff.js",
+    "static/css/2.fa008d51.chunk.css",
+    "static/js/2.39c97a8a.chunk.js",
+    "static/css/main.b1f1e749.chunk.css",
+    "static/js/main.1188348c.chunk.js"
+  ]
+}
