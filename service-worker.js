@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/urca-master-info/precache-manifest.40e8adf04f0cf4e681d6bfa02fed03b5.js"
+  "/urca-master-info/precache-manifest.74768df5681f9c6d76e3d34c02638e34.js"
 );
 
 self.addEventListener('message', (event) => {

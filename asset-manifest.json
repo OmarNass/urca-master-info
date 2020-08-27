@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/urca-master-info/static/css/main.b1f1e749.chunk.css",
-    "main.js": "/urca-master-info/static/js/main.1188348c.chunk.js",
-    "main.js.map": "/urca-master-info/static/js/main.1188348c.chunk.js.map",
+    "main.js": "/urca-master-info/static/js/main.991165ab.chunk.js",
+    "main.js.map": "/urca-master-info/static/js/main.991165ab.chunk.js.map",
     "runtime-main.js": "/urca-master-info/static/js/runtime-main.7fd33aff.js",
     "runtime-main.js.map": "/urca-master-info/static/js/runtime-main.7fd33aff.js.map",
     "static/css/2.fa008d51.chunk.css": "/urca-master-info/static/css/2.fa008d51.chunk.css",
     "static/js/2.39c97a8a.chunk.js": "/urca-master-info/static/js/2.39c97a8a.chunk.js",
     "static/js/2.39c97a8a.chunk.js.map": "/urca-master-info/static/js/2.39c97a8a.chunk.js.map",
     "index.html": "/urca-master-info/index.html",
-    "precache-manifest.40e8adf04f0cf4e681d6bfa02fed03b5.js": "/urca-master-info/precache-manifest.40e8adf04f0cf4e681d6bfa02fed03b5.js",
+    "precache-manifest.74768df5681f9c6d76e3d34c02638e34.js": "/urca-master-info/precache-manifest.74768df5681f9c6d76e3d34c02638e34.js",
     "service-worker.js": "/urca-master-info/service-worker.js",
     "static/css/2.fa008d51.chunk.css.map": "/urca-master-info/static/css/2.fa008d51.chunk.css.map",
     "static/css/main.b1f1e749.chunk.css.map": "/urca-master-info/static/css/main.b1f1e749.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.fa008d51.chunk.css",
     "static/js/2.39c97a8a.chunk.js",
     "static/css/main.b1f1e749.chunk.css",
-    "static/js/main.1188348c.chunk.js"
+    "static/js/main.991165ab.chunk.js"
   ]
 }
