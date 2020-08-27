@@ -56,7 +56,6 @@ const Landing = () => {
     onReInit: () => feather.replace(),
   };
   return (
-    // M A I N
     <main>
       <div className="container">
         <div className="row">
@@ -93,12 +92,11 @@ const Landing = () => {
             </Link>
           </div>
         </div>
-        {/* row end */}
+
         <div className="row mt-5">
           <div className="col-12 mb-3">
             <h1>Projets réalisés</h1>
           </div>
-          {/* 3 Latest projects (ie. Posts tagged Project) */}
           {projects.slice(0, 3).map((project) => (
             <div key={project.id} className="col">
               <Project
@@ -113,7 +111,6 @@ const Landing = () => {
             </Link>
           </div>
         </div>
-        {/* <!-- row end--> */}
         <div className="row mt-5">
           <div className="col-12 mb-3">
             <h1>Paroles d'Anciens</h1>
@@ -146,7 +143,6 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      {/* <!-- container end --> */}
     </main>
   );
 };

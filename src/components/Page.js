@@ -81,7 +81,6 @@ const Page = ({ match, type, navigation }) => {
             </div>
           </div>
           <div className="col-md-8 px-0">
-            {/* <!-- BREADCRUMBS NAVIGATION --> */}
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
