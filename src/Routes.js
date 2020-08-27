@@ -18,9 +18,9 @@ const Routes = ({ navigation }) => {
   async function getSlugs(type) {
     try {
       const res = await axios.get(
-        "http://134.122.82.6/ghost/api/v3/content/" +
+        "/api/v3/content/" +
           type +
-          "/?key=9c5ea65e652af6ad698e4fbf3e&fields=slug"
+          "/?key=cac15f28976f6e0ff9542ef6a6&fields=slug"
       );
       if (type === "pages") setPageSlugs(res.data.pages);
       else setPostSlugs(res.data.posts);

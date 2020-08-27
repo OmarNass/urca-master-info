@@ -20,7 +20,7 @@ const App = () => {
   async function getNavigation() {
     try {
       const res = await axios.get(
-        "http://134.122.82.6/ghost/api/v3/content/settings/?key=9c5ea65e652af6ad698e4fbf3e"
+        "/api/v3/content/settings/?key=cac15f28976f6e0ff9542ef6a6"
       );
       setNavigation(res.data.settings.navigation);
     } catch (err) {

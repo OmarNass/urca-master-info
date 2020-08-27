@@ -13,11 +13,11 @@ const Page = ({ match, type, navigation }) => {
     const slug = path.substring(1);
     try {
       const res = await axios.get(
-        "http://134.122.82.6/ghost/api/v3/content/" +
+        "/api/v3/content/" +
           type +
           "/slug/" +
           slug +
-          "/?key=9c5ea65e652af6ad698e4fbf3e"
+          "/?key=cac15f28976f6e0ff9542ef6a6"
       );
       if (type === "pages") setPage(res.data.pages[0]);
       else setPage(res.data.posts[0]);
@@ -81,6 +81,7 @@ const Page = ({ match, type, navigation }) => {
             </div>
           </div>
           <div className="col-md-8 px-0">
+            {/* <!-- BREADCRUMBS NAVIGATION --> */}
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">

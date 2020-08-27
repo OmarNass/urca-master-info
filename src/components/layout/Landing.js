@@ -26,7 +26,7 @@ const Landing = () => {
   async function getPosts(type) {
     try {
       const res = await axios.get(
-        "http://134.122.82.6/ghost/api/v3/content/posts/?key=9c5ea65e652af6ad698e4fbf3e&filter=tag:" +
+        "/api/v3/content/posts/?key=cac15f28976f6e0ff9542ef6a6&filter=tag:" +
           type
       );
       if (type === "project") setProjects(res.data.posts);
@@ -56,6 +56,7 @@ const Landing = () => {
     onReInit: () => feather.replace(),
   };
   return (
+    // M A I N
     <main>
       <div className="container">
         <div className="row">
@@ -92,11 +93,12 @@ const Landing = () => {
             </Link>
           </div>
         </div>
-
+        {/* row end */}
         <div className="row mt-5">
           <div className="col-12 mb-3">
             <h1>Projets réalisés</h1>
           </div>
+          {/* 3 Latest projects (ie. Posts tagged Project) */}
           {projects.slice(0, 3).map((project) => (
             <div key={project.id} className="col">
               <Project
@@ -111,6 +113,7 @@ const Landing = () => {
             </Link>
           </div>
         </div>
+        {/* <!-- row end--> */}
         <div className="row mt-5">
           <div className="col-12 mb-3">
             <h1>Paroles d'Anciens</h1>
@@ -143,6 +146,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      {/* <!-- container end --> */}
     </main>
   );
 };

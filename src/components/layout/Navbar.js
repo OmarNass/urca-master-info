@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const Navbar = ({ navigation }) => {
   return (
+    // H E A D E R
     <header className="fixed-top">
       <div className="container-fluid">
         <div className="row">
