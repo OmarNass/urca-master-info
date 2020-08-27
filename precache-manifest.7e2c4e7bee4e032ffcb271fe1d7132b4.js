@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa26505451c2f63795c1fca767c538a0",
+    "revision": "0f648e97d6fbe78f7d7907291e002617",
     "url": "/urca-master-info/index.html"
   },
   {
