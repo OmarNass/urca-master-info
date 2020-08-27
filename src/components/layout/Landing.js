@@ -26,7 +26,7 @@ const Landing = () => {
   async function getPosts(type) {
     try {
       const res = await axios.get(
-        "/api/v3/content/posts/?key=9c5ea65e652af6ad698e4fbf3e&filter=tag:" +
+        "http://134.122.82.6/ghost/api/v3/content/posts/?key=9c5ea65e652af6ad698e4fbf3e&filter=tag:" +
           type
       );
       if (type === "project") setProjects(res.data.posts);

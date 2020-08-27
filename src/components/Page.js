@@ -13,7 +13,7 @@ const Page = ({ match, type, navigation }) => {
     const slug = path.substring(1);
     try {
       const res = await axios.get(
-        "/api/v3/content/" +
+        "http://134.122.82.6/ghost/api/v3/content/" +
           type +
           "/slug/" +
           slug +
