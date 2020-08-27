@@ -20,7 +20,7 @@ const Routes = ({ navigation }) => {
       const res = await axios.get(
         "/api/v3/content/" +
           type +
-          "/?key=cac15f28976f6e0ff9542ef6a6&fields=slug"
+          "/?key=9c5ea65e652af6ad698e4fbf3e&fields=slug"
       );
       if (type === "pages") setPageSlugs(res.data.pages);
       else setPostSlugs(res.data.posts);

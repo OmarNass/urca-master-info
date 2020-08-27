@@ -17,7 +17,7 @@ const Page = ({ match, type, navigation }) => {
           type +
           "/slug/" +
           slug +
-          "/?key=cac15f28976f6e0ff9542ef6a6"
+          "/?key=9c5ea65e652af6ad698e4fbf3e"
       );
       if (type === "pages") setPage(res.data.pages[0]);
       else setPage(res.data.posts[0]);
